@@ -1,3 +1,5 @@
+# switch-to-xbox
+
 Instruções para instalação da versão mais recente no Ubuntu 22.04:
 
 Abra o terminal (Ctrl + Alt + T) e digite os seguintes comandos:
