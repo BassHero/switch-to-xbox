@@ -18,7 +18,7 @@ $ cd switch-to-xbox_0.0.1
 $ ./installer.sh
 
 **
-Mais detalhes sobre a confifuração podem se encontrados no vídeo aqui:
+Mais detalhes sobre a configuração podem se encontrados no vídeo aqui:
 https://www.youtube.com/watch?v=Az1XkWEWDgU
 
 
