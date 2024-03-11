@@ -12,3 +12,7 @@ $ file-roller -h switch-to-xbox_0.0.1.tar.xz
 $ cd switch-to-xbox_0.0.1
 
 $ ./installer.sh
+
+Mais detalhes sobre a confifuração podem se encontrados no vídeo [aqui]https://www.youtube.com/watch?v=Az1XkWEWDgU&pp=ygUScmVuYXRvIHJhbWFsaG8gMjMy[/aqui]:
+
+
