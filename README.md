@@ -1,6 +1,6 @@
 # switch-to-xbox
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=Status&message=under development&color=GREEN&style=for-the-badge)
+![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=Status&message=under%20development&color=GREEN&style=for-the-badge)
 
 Steps to install the latest version on Ubuntu 22.04:
 
