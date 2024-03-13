@@ -7,6 +7,8 @@ Steps to install the latest version on Ubuntu 22.04:
 Open the terminal (Ctrl + Alt + T) and type the following commands:
 =
 
+$ cd ~/Downloads
+
 $ git clone https://github.com/BassHero/switch-to-xbox.git
 
 $ cd switch-to-xbox
