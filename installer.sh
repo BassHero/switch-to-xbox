@@ -132,4 +132,5 @@ chmod a+x switch-to-xbox.*
 cp switch-to-xbox.sh ~
 cp switch-to-xbox.desktop ~/.local/share/applications
 wget https://github.com/BassHero/switch-to-xbox/blob/main/icons/switch-to-xbox-v2.png
+mkdir ~/.local/share/icons
 cp switch-to-xbox-v2.png ~/.local/share/icons
