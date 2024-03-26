@@ -12,14 +12,16 @@
 # 3. Instalação do xboxdrv modificado tra não ter atraso no funcionamento do controle:
 
 sudo apt install evtest xboxdrv -y
-	
+
+echo " "
 read -p "pt_BR: Deseja instalar a versão xboxdrv que acelera o tempo de conexão?
 Caso responda não e o controle fique demorando por volta de 60 segundos pra conectar, 
 execute o instalador novamente e responda sim quando chegar nesta parte. S/N:
 
 en_US: Would you like to install the xboxdrv version that speeds up connection time?
 If you answer no and the gamepad takes around 60 seconds to works, run 
-run the script again and answer Yes when you get to this part. Y/N: " xboxdrv_fast	
+run the script again and answer Yes when you get to this part. Y/N: " xboxdrv_fast
+echo "==================================================================="
 
 if [ $xboxdrv_fast = s -o $xboxdrv_fast = y ]; then
 
@@ -44,6 +46,7 @@ funcionem, execute o instalador novamente e responda sim quando chegar nesta par
 en_US: Would you like to install dkms-hid-nintendo?
 If you answer no and the gamepad is not recognized or some buttons on the gamepad 
 do not work, run the script again and answer yes when you get to this part. Y/N: " dkms_hid_nintendo
+echo "==================================================================="
 	
 if [ $xboxdrv_fast = s -o $xboxdrv_fast = y ]; then
 
@@ -69,6 +72,7 @@ funcionem, execute o instalador novamente e responda sim quando chegar nesta par
 en_US: Would you like to install Joycond?
 If you answer no and the gamepad is not recognized or some buttons on the gamepad
 do not work, run the script again and answer yes when you get to this part. Y/N:" joycond
+echo "==================================================================="
 	
 if [ $xboxdrv_fast = s -o $xboxdrv_fast = y ]; then
 	
