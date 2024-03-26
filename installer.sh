@@ -11,7 +11,14 @@
 
 # 3. Instalação do xboxdrv modificado tra não ter atraso no funcionamento do controle:
 
+evtest=/usr/bin/evtest
 xboxdrv=/usr/bin/xboxdrv
+
+if [ -e $evtest ]; then
+
+	sudo apt install evtest -y
+	
+fi
 
 if [ -e $xboxdrv ]; then
 
