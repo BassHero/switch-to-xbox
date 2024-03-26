@@ -11,20 +11,7 @@
 
 # 3. Instalação do xboxdrv modificado tra não ter atraso no funcionamento do controle:
 
-evtest=/usr/bin/evtest
-xboxdrv=/usr/bin/xboxdrv
-
-if [ -e $evtest ]; then
-
-	sudo apt install evtest -y
-	
-fi
-
-if [ -e $xboxdrv ]; then
-
-	sudo apt install xboxdrv -y
-	
-fi
+sudo apt install evtest xboxdrv -y
 	
 read -p "pt_BR: Deseja instalar a versão xboxdrv que acelera o tempo de conexão?
 Caso responda não e o controle fique demorando por volta de 60 segundos pra conectar, 
