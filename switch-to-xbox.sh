@@ -23,7 +23,7 @@ if [ $controle_ligado = s -o $controle_ligado = y ]; then
 	read -p "
 	
 pt_BR: Digite apenas o número do event correspondente ao controle: 
-en_US: Type just the event number related to gamepad: " event
+en_US: Type only the number of event related to gamepad: " event
 
 	xboxdrv --evdev "/dev/input/event$event" --evdev-absmap ABS_X=x1,ABS_Y=y1,ABS_RX=x2,ABS_RY=y2,ABS_HAT0X=dpad_x,ABS_HAT0Y=dpad_y, --axismap -Y1=Y1,-Y2=Y2 --evdev-keymap BTN_SOUTH=a,BTN_EAST=b,BTN_WEST=x,BTN_NORTH=y,BTN_TL=lb,BTN_TL2=lt,BTN_TR=rb,BTN_TR2=rt,BTN_SELECT=back,BTN_START=start,BTN_MODE=guide,BTN_THUMBL=tl,BTN_THUMBR=tr, --mimic-xpad
 
