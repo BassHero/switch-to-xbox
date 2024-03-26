@@ -42,6 +42,7 @@ fi
 	
 # 4. Instalação do dkms-hid-nintendo:
 
+echo " "
 read -p "pt_BR: Deseja instalar o dkms-hid-nintendo? 
 Caso responda não e o controle não seja reconhecido ou alguns botões do controle não
 funcionem, execute o instalador novamente e responda sim quando chegar nesta parte. S/N:
@@ -66,6 +67,7 @@ fi
 	
 # 5. Instalação do Joycond:
 
+echo " "
 read -p "pt_BR: Deseja instalar o Joycond? 
 Caso responda não e o controle não seja reconhecido ou alguns botões do controle não 
 funcionem, execute o instalador novamente e responda sim quando chegar nesta parte. S/N: 
