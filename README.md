@@ -2,10 +2,11 @@
 
 ![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=Status&message=under%20development&color=GREEN&style=for-the-badge)
 
-Steps to install the latest version on Ubuntu 22.04:
+How to install the latest version on Ubuntu 22.04:
 
-Open the terminal (Ctrl + Alt + T) and type the following commands:
-=
+Download the latest release script, turn it executable, and run it, or...
+
+## Open the terminal (Ctrl + Alt + T) and type the following commands:
 
 $ cd ~/Downloads
 
