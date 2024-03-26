@@ -19,13 +19,15 @@ if [ -e $xboxdrv ]; then
 	
 fi
 	
-read -p "Deseja instalar a versão xboxdrv que acelera o tempo de conexão?
-Caso responda não e o controle fique demorando por volta de 60
-segundos pra conectar, execute o instalador novamente e responda
-sim quando chegar nesta parte.
-S/N: " xboxdrv_fast	
+read -p "pt_BR: Deseja instalar a versão xboxdrv que acelera o tempo de conexão?
+Caso responda não e o controle fique demorando por volta de 60 segundos pra conectar, 
+execute o instalador novamente e responda sim quando chegar nesta parte. S/N:
 
-if [ $xboxdrv_fast = s ]; then
+en_US: Would you like to install the xboxdrv version that speeds up connection time?
+If you answer no and the gamepad takes around 60 seconds to works, run 
+run the script again and answer Yes when you get to this part. Y/N: " xboxdrv_fast	
+
+if [ $xboxdrv_fast = s -o $xboxdrv_fast = y ]; then
 
 	git clone https://github.com/buxit/xboxdrv.git
 	cd xboxdrv
@@ -40,14 +42,17 @@ fi
 	
 # 4. Instalação do dkms-hid-nintendo:
 
-read -p "Deseja instalar o dkms-hid-nintendo? 
-Caso responda não e o controle não seja reconhecido
-ou alguns botões do controle não funcionem, execute
-o instalador novamente e respondasim quando chegar
-nesta parte. S/N: " dkms_hid_nintendo
-	
-if [ $dkms_hid_nintendo = s ]; then
+read -p "pt_BR: Deseja instalar o dkms-hid-nintendo? 
+Caso responda não e o controle não seja reconhecido ou alguns botões do controle não
+funcionem, execute o instalador novamente e responda sim quando chegar nesta parte. S/N:
 
+en_US: Would you like to install dkms-hid-nintendo?
+If you answer no and the gamepad is not recognized or some buttons on the gamepad 
+do not work, run the script again and answer yes when you get to this part. Y/N: " dkms_hid_nintendo
+	
+if [ $xboxdrv_fast = s -o $xboxdrv_fast = y ]; then
+
+	echo " "
 	echo "Clonando o repositório do dkms-hid-nintendo driver..."
 	git clone https://github.com/nicman23/dkms-hid-nintendo
 	cd dkms-hid-nintendo
@@ -61,13 +66,15 @@ fi
 	
 # 5. Instalação do Joycond:
 
-read -p "Deseja instalar o Joycond? 
-Caso responda não e o controle não seja reconhecido
-ou alguns botões do controle não funcionem, execute
-o instalador novamente e responda sim quando chegar
-nesta parte. S/N: " joycond
+read -p "pt_BR: Deseja instalar o Joycond? 
+Caso responda não e o controle não seja reconhecido ou alguns botões do controle não 
+funcionem, execute o instalador novamente e responda sim quando chegar nesta parte. S/N: 
+
+en_US: Would you like to install Joycond?
+If you answer no and the gamepad is not recognized or some buttons on the gamepad
+do not work, run the script again and answer yes when you get to this part. Y/N:" joycond
 	
-if [ $joycond = s ]; then
+if [ $xboxdrv_fast = s -o $xboxdrv_fast = y ]; then
 	
 	echo "Clonando o repositório do joycond..."
 	git clone https://github.com/DanielOgorchock/joycond	
@@ -82,55 +89,10 @@ fi
 
 # 6. Configurando o switch-to-xbox:
 
-echo "#!/bin/bash
-
-# Links úteis:
-# Tutorial xboxdrv: https://steamcommunity.com/app/221410/discussions/0/558748653738497361/
-# dkms-hid-nintendo: https://github.com/nicman23/dkms-hid-nintendo
-# joycond: https://github.com/DanielOgorchock/joycond
-
-read -p "O controle está ligado e pareado? S/N: " controle_ligado
-
-if [ $controle_ligado = s ]; then
-
-	echo "Primeiro precisamos saber qual é o número event do controle."
-	echo "============== Nintendo Switch Pro Controller =============="
-
-	timeout -k 1 1 evtest	
-
-	read -p "Digite apenas o número do event correspondente ao controle: " event
-
-	xboxdrv --evdev "/dev/input/event$event" --evdev-absmap ABS_X=x1,ABS_Y=y1,ABS_RX=x2,ABS_RY=y2,ABS_HAT0X=dpad_x,ABS_HAT0Y=dpad_y, --axismap -Y1=Y1,-Y2=Y2 --evdev-keymap BTN_SOUTH=a,BTN_EAST=b,BTN_WEST=x,BTN_NORTH=y,BTN_TL=lb,BTN_TL2=lt,BTN_TR=rb,BTN_TR2=rt,BTN_SELECT=back,BTN_START=start,BTN_MODE=guide,BTN_THUMBL=tl,BTN_THUMBR=tr, --mimic-xpad
-
-else
-
-	echo "Você precisa ligar o controle primeiro."
-	echo "Ligue o controle e execute o script novamente."
-
-fi
-" >> switch-to-xbox.sh
-
-echo "[Desktop Entry]
-Encoding=UTF-8
-Name=Switch to Xbox
-GenericName=Switch to Xbox
-Exec=./switch-to-xbox.sh
-Icon=switch-to-xbox-v2.png
-Type=Application
-Terminal=true
-X-GNOME-Autostart-enabled=true
-X-KDE-autostart-after=panel
-X-KDE-StartupNotify=false
-X-DCOP-ServiceType=Unique
-X-KDE-UniqueApplet=true
-X-KDE-autostart-condition=AutoStart:true
-Categories=Game;
-Comment=Emulate Xbox 360 Controller
-" >> switch-to-xbox.desktop
-
+rm ~/.local/share/applications/switch-to-xbox.desktop
+rm ~/switch-to-xbox.sh
 chmod a+x switch-to-xbox.*
 cp switch-to-xbox.sh ~
 cp switch-to-xbox.desktop ~/.local/share/applications
-wget https://github.com/BassHero/switch-to-xbox/blob/main/icons/switch-to-xbox-v2.png
 mkdir ~/.local/share/icons
-cp switch-to-xbox-v2.png ~/.local/share/icons
+cp /icons/switch-to-xbox-v*.png ~/.local/share/icons
