@@ -97,4 +97,4 @@ chmod a+x switch-to-xbox.*
 cp switch-to-xbox.sh ~
 cp switch-to-xbox.desktop ~/.local/share/applications
 mkdir ~/.local/share/icons
-cp /icons/switch-to-xbox-v*.png ~/.local/share/icons
+cp /icons/switch-to-xbox-v2.png ~/.local/share/icons
