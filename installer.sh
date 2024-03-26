@@ -13,6 +13,7 @@
 
 sudo apt install evtest xboxdrv -y
 
+echo "==================================================================="
 echo " "
 read -p "pt_BR: Deseja instalar a versão xboxdrv que acelera o tempo de conexão?
 Caso responda não e o controle fique demorando por volta de 60 segundos pra conectar, 
