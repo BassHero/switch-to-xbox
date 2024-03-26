@@ -14,6 +14,8 @@ $ git clone https://github.com/BassHero/switch-to-xbox.git
 
 $ cd switch-to-xbox
 
+$ chmod a+x installer.sh
+
 $ ./installer.sh
 
 **
